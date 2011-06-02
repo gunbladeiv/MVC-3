@@ -1,0 +1,12 @@
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\UnitTest.Proline.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\UnitTest.Proline.pdb
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\EntityFramework.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\Omu.ValueInjecter.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\Proline.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\Proline.pdb
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\EntityFramework.xml
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\Omu.ValueInjecter.pdb
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\bin\Debug\Omu.ValueInjecter.xml
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\obj\Debug\UnitTest.Proline.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\UnitTest.Proline\obj\Debug\UnitTest.Proline.pdb

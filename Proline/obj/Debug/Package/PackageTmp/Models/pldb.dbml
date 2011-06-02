@@ -1,0 +1,1810 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PROLINE" Class="pldbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=PROLINE;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PROLINEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ACC" Member="ACCs">
+    <Type Name="ACC">
+      <Column Name="AccID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="G1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WFR" Member="WFRs">
+    <Type Name="WFR">
+      <Column Name="GMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G226" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G310" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G310To" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AGM" Member="AGMs">
+    <Type Name="AGM">
+      <Column Name="OGID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccNo" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GLCode" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AHM" Member="AHMs">
+    <Type Name="AHM">
+      <Column Name="HdrID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="G45" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RptName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AMF" Member="AMFs">
+    <Type Name="AMF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Abbrev" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CSince" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Add1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NRIC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="G30" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G31" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G32" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G33" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G34" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G35" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G55_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G55_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BActNo1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BActNo2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Handler" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Asst" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubBroker" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="CurrCode" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="GroupAcc" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefAct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoldAct" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="GLAct" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GreetCNY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GreetChr" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GreetDpv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GreetHR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BsReg" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FinanceCo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FinanceBr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ethnic" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Occupation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Salutation" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OldNRIC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AcctContact" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="AMLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G101" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CrLimit" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="KITDays" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G180" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G204" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactAsst" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HoldAccID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IntroducerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AML" Member="AMLs">
+    <Type Name="AML">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ACCID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="G205" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Add1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LUAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G216" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ZIP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ContactAsst" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AMT" Member="AMTs">
+    <Type Name="AMT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AMLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="G206" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AOF" Member="AOFs">
+    <Type Name="AOF">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccType" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="AccID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DocNo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="InstNo" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TrxSeq" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SrcNo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TrxType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DocDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="XDocDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InputDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnterBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CC" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ER" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="AccMth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PDDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OXAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LXAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Ref1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ref2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GLID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AOFS" Member="AOF1s">
+    <Type Name="AOF1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PDSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InstNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrxSeq" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G250" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SrcID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Qty" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="AQty" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="XQty" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="AOFSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OUPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LUPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OUCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LUCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="TrxDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccMth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AOFSS" Member="AOFSSes">
+    <Type Name="AOFSS">
+      <Column Name="AOFSID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SNo" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SS" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.APC" Member="APCs">
+    <Type Name="APC">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OGID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AccID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="APID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CC" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ER" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="ODr" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LDr" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OCr" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LCr" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OBal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LBal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.APM" Member="APMs">
+    <Type Name="APM">
+      <Column Name="APID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ModID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FinYr" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="StartDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Closed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="YDigit" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ARD" Member="ARDs">
+    <Type Name="ARD">
+      <Column Name="AccID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="APID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Src" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UDNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OXAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LXAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ODiff" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LDiff" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Applied" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AccMth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ATM" Member="ATMs">
+    <Type Name="ATM">
+      <Column Name="TypeID" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Seq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DCFlag" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="RPTGrp" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="[Print]" Member="Print" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SkipZero" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ATT" Member="ATTs">
+    <Type Name="ATT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FileURL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FileDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SaveAsBlob" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AUM" Member="AUMs">
+    <Type Name="AUM">
+      <Column Name="AuditID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="DTStamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Blob" Member="Blobs">
+    <Type Name="Blob">
+      <Column Name="id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="blob" Member="blob1" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BTM" Member="BTMs">
+    <Type Name="BTM">
+      <Column Name="BID" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CBD" Member="CBDs">
+    <Type Name="CBD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CBFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CLDNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CLBNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="UOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Rates" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Freq" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AStockID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G250" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CBDT" Member="CBDTs">
+    <Type Name="CBDT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CBFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CLDNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CLBNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="UOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Rates" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Freq" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CBF" Member="CBFs">
+    <Type Name="CBF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TrxDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InvNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvInfo" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="InvDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Posted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InstNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InvInfo2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsDCNote" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LSTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OSTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="STax1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LGross" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OGross" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PymtTerms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GSTIncl" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Header" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CustRef" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DONotes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsAuto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsBadDebt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AccNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="G2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CBFT" Member="CBFTs">
+    <Type Name="CBFT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TrxDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InvNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvInfo" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="InvDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Posted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InstNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InvInfo2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsDCNote" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LSTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OSTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="STax1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LGross" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OGross" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PymtTerms" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DONo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GSTIncl" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Header" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CustRef" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DONotes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsAuto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CBT" Member="CBTs">
+    <Type Name="CBT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TempID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="OPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="UOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CCF" Member="CCFs">
+    <Type Name="CCF">
+      <Column Name="CurrCode" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PrintSeq" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CCT" Member="CCTs">
+    <Type Name="CCT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContractID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Text1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Text2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Text3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Text4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Text5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CertType" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="SerialNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IssuanceDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="CertFormat" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ReceivedDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="WarrantyYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NoOfCopy" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DeliveryMethod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CDF" Member="CDFs">
+    <Type Name="CDF">
+      <Column Name="OGID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CompReg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Add1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RPT1" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RPT2" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="RPT3" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Motto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WebSite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FreePhone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Bank" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CFD" Member="CFDs">
+    <Type Name="CFD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="EnterDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="G226" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CFF" Member="CFFs">
+    <Type Name="CFF">
+      <Column Name="Fld_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fld_Module" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Fld_SubModule" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Fld_Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fld_Seq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fld_Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fld_Tags" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Fld_Desc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Fld_Mandatory" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Fld_Script" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CFL" Member="CFLs">
+    <Type Name="CFL">
+      <Column Name="List_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="List_CFFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="List_OptID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="List_Value" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CFV" Member="CFVs">
+    <Type Name="CFV">
+      <Column Name="Val_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Val_Module" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Val_DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Val_CFFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Val_Text" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Val_Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Val_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Val_List" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLC" Member="CLCs">
+    <Type Name="CLC">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProdID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G209" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="Freq" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLD" Member="CLDs">
+    <Type Name="CLD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G205" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Add1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Freq" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="G208" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G203" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LUAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OInitialPV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LInitialPV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OSubPV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LSubPV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Billing" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AreaCovered" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Instruction" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="ZIP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Map" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FreqList" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G212" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ODownPymt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LDownPymt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DownPymtPct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PaymentMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FixTech" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SvcDesc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Renewable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RetentionP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORetention" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LRetention" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AgReceivedDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AgReceivedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AMLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EstTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstDuration" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Period" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AB_TSTFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PL_TSTFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLE" Member="CLEs">
+    <Type Name="CLE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ToDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLI" Member="CLIs">
+    <Type Name="CLI">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G202" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G206" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Freq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLL" Member="CLLs">
+    <Type Name="CLL">
+      <Column Name="CMFID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CMFID2" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLR" Member="CLRs">
+    <Type Name="CLR">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="EnterDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="G226" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLSA" Member="CLSAs">
+    <Type Name="CLSA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G202" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="G201" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G199" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AQty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLSV" Member="CLSVs">
+    <Type Name="CLSV">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="G206" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G209" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProdID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="Freq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Amt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DeltaQty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DeltaAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DeltaFreqNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FreqNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OSP" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LSP" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CommP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Descp" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CMF" Member="CMFs">
+    <Type Name="CMF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UDNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DocType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AccEntry" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AccType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="OldDocNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="G200" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G203" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Add1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ZIP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LUAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G204" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PhO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Sales" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Period" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndEffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Contractor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintPDA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AccMth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnterBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="UpdateBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="InputDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PrintBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PrintNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CCAmt" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ERAmt" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OldUDNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SysType" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="IsRenewal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="XDocNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TPPClass" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TPPNCB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Grade" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scf_title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="scf_maincon" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="scf_subcon" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="scf_attn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="scf_SubDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SaveTS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SaveUID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="G229" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PymtTerms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Origin" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PONo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RenNo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CMR" Member="CMRs">
+    <Type Name="CMR">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Period" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="RptID" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Freq" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSA" Member="CSAs">
+    <Type Name="CSA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CSIID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G201" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G202" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="G199" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AQty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSC" Member="CSCs">
+    <Type Name="CSC">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CSSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProdID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G209" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSE" Member="CSEs">
+    <Type Name="CSE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CSSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G201" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSI" Member="CSIs">
+    <Type Name="CSI">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CSSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G202" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G206" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="G199" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AG199" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PDSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G209" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="AQty" Type="System.Single" DbType="Real" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS" Member="CSSes">
+    <Type Name="CSS">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="G207" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G208" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OPV" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="LPV" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="ScheduleDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InvNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Billable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CFromDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SRNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="AreaCompleted" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HolesCompleted" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Old" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="COD" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AutoFlag" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IntNotes" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Confirmed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InvNoT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EndDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AckType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AckID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G198" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAppDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NAppMode" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="NAppDuration" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NAppConfirm" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OCharge" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LCharge" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NAppG207" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PayMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PayNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PayAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PrNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PrDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PrUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpUID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Hist" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OldCSSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NextCSSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TSTFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CST" Member="CSTs">
+    <Type Name="CST">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CSSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TechID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENR" Member="ENRs">
+    <Type Name="ENR">
+      <Column Name="ENSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Recipient" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENS" Member="ENs">
+    <Type Name="EN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Cron" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CC" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="BCC" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Template" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="TempType" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SQL" Type="System.String" DbType="VarChar(4000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ERM" Member="ERMs">
+    <Type Name="ERM">
+      <Column Name="GID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Val" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GAF" Member="GAFs">
+    <Type Name="GAF">
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GAM" Member="GAMs">
+    <Type Name="GAM">
+      <Column Name="GACode" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SS" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Abbrev" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CurrCode" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GMF" Member="GMFs">
+    <Type Name="GMF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="GMF_OGA" Member="OGAs" ThisKey="ID" OtherKey="GID" Type="OGA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOL" Member="HOLs">
+    <Type Name="HOL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Yr" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StartDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsFixed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="G80" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INF" Member="INFs">
+    <Type Name="INF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="srcTable" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDocRef" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateUID" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="G226" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="G310" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ARXML" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="ARText" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ToSend" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MsgSent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Emails" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="ARDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ARRec" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INFD" Member="INFDs">
+    <Type Name="INFD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="INFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CrDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="srcTable" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XDocRef" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INFS" Member="INF1s">
+    <Type Name="INF1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="INFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G310" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToSend" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MsgSent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INFU" Member="INFUs">
+    <Type Name="INFU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="INFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Mode" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JDF" Member="JDFs">
+    <Type Name="JDF">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="JNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AccType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DCFlag" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CC" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ER" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JMF" Member="JMFs">
+    <Type Name="JMF">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="JType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="JSrc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DocDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InputDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnterBy" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="UpdateBy" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="UpdateDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PrintBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PrintDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PrintNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccMth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ref" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Narration" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UDNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LUAW" Member="LUAWs">
+    <Type Name="LUAW">
+      <Column Name="FRID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TOID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="TimeFr" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TimeTo" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAP" Member="MAPs">
+    <Type Name="MAP">
+      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Map" Member="Map1" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MRL" Member="MRLs">
+    <Type Name="MRL">
+      <Column Name="RelID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MSG" Member="MSGs">
+    <Type Name="MSG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SrcID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G204" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Abbrev" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateUID" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OGA" Member="OGAs">
+    <Type Name="OGA">
+      <Column Name="OGID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UID" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="GID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="GMF_OGA" Member="GMF" ThisKey="GID" OtherKey="ID" Type="GMF" IsForeignKey="true" />
+      <Association Name="UMF_OGA" Member="UMF" ThisKey="UID" OtherKey="UserID" Type="UMF" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PCD" Member="PCDs">
+    <Type Name="PCD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PDSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G30" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MinQty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CCID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="OComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CommP" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PDP" Member="PDPs">
+    <Type Name="PDP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PDSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MinQty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CC" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PDS" Member="PDs">
+    <Type Name="PD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="Cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Unit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BarCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WithSerial" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DiluteX" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiluteY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UOMDX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UOMDY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reorder" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="G230" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G233" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G234" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PurchaseInfo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MarkupPct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiscPct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="T1G60" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T2G60" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommPct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PPD" Member="PPDs">
+    <Type Name="PPD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PDSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MinQty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CCID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Markup" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaxDisc" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCBD" Member="QCBDs">
+    <Type Name="QCBD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CBFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CLDNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CLBNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="UOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Rates" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Freq" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="G250" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SrcID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCBF" Member="QCBFs">
+    <Type Name="QCBF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TrxDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InvNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvInfo" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="InvDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Posted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InstNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="InvInfo2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsDCNote" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LSTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OSTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="STax1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LGross" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OGross" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PymtTerms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GSTIncl" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Header" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CustRef" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DONotes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsAuto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="G2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCCT" Member="QCCTs">
+    <Type Name="QCCT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContractID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Text1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Text2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Text3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Text4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Text5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CertType" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="SerialNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IssuanceDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="CertFormat" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ReceivedDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="WarrantyYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NoOfCopy" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DeliveryMethod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCLC" Member="QCLCs">
+    <Type Name="QCLC">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProdID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G209" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="Freq" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCLD" Member="QCLDs">
+    <Type Name="QCLD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G205" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Add1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Freq" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="G208" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G203" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LUAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OInitialPV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LInitialPV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OSubPV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LSubPV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Billing" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AreaCovered" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Instruction" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="ZIP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Map" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FreqList" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G212" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ODownPymt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LDownPymt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DownPymtPct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PaymentMode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FixTech" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SvcDesc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Renewable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RetentionP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ORetention" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LRetention" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AgReceivedDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AgReceivedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AMLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EstTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstDuration" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Period" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AB_TSTFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PL_TSTFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCLI" Member="QCLIs">
+    <Type Name="QCLI">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G202" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G206" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Freq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCLSA" Member="QCLSAs">
+    <Type Name="QCLSA">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G202" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="G201" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G199" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AQty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCLSV" Member="QCLSVs">
+    <Type Name="QCLSV">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="G206" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G209" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProdID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="Freq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Amt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DeltaQty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DeltaAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FreqNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DeltaFreqNo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="OSP" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LSP" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CommP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Descp" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QCMF" Member="QCMFs">
+    <Type Name="QCMF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UDNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DocType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AccEntry" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AccType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="OldDocNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="G200" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G203" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Add1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ZIP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LUAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G204" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PhO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Sales" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Period" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndEffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndExpDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Contractor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintPDA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AccMth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnterBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="UpdateBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="InputDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PrintBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PrintNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CCAmt" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ERAmt" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OldUDNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SysType" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="IsRenewal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="XDocNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TPPClass" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TPPNCB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Grade" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scf_title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="scf_maincon" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="scf_subcon" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="scf_attn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="scf_SubDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SaveTS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SaveUID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="G229" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PymtTerms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Origin" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PONo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RenNo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QPF" Member="QPFs">
+    <Type Name="QPF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProdType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SysType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AppType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PropType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Coring" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LMeter" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="LabourNor" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourSun" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourPub" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourNorOT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourSunOT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourPubOT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourNorOTX" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourSunOTX" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourPubOTX" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Renewal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="HRStorey" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HRRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Premise" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Lentrek" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MinTrip" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ExtraTrip" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MinFumigant" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Fumigant" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Ventilation" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MinVentilation" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ExtraVentilation" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ExtraVentilationCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LabourVentilation" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WaitTime" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ExpoTime" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LabourNorSub" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LabourSunSub" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LabourPubSub" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EffDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QSD" Member="QSDs">
+    <Type Name="QSD">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QSTID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Diff" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="DT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QSF" Member="QSFs">
+    <Type Name="QSF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UGC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="SrcTable" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Filter" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QSM" Member="QSMs">
+    <Type Name="QSM">
+      <Column Name="ID" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UGC" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Main" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QST" Member="QSTs">
+    <Type Name="QST">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SPID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SrcTable" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ver" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lock" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SCF" Member="SCFs">
+    <Type Name="SCF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WPNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WPExpDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="VehNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FinNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SOCIDNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SOCExpDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SDF" Member="SDFs">
+    <Type Name="SDF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SMFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PDSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SGM" Member="SGMs">
+    <Type Name="SGM">
+      <Column Name="GID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UGC" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Abbrev" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Val" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Seq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SID" Member="SIDs">
+    <Type Name="SID">
+      <Column Name="SID" Member="SID1" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sys" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMF" Member="SMFs">
+    <Type Name="SMF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PDSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS" Member="Sies">
+    <Type Name="SY">
+      <Column Name="ID" Type="System.String" DbType="Char(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYSU" Member="SYSUs">
+    <Type Name="SYSU">
+      <Column Name="ID" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TDF" Member="TDFs">
+    <Type Name="TDF">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocType" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DocNo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AccID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="XDocNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InstNo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AccType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TMF" Member="TMFs">
+    <Type Name="TMF">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocType" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Narration" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="AccEntry" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AccID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AccName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CashID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DocDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InputDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccMth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CC" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ER" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PrintNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnterBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="UpdateBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PrintBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G50" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UDNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DueDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeferred" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OldDocNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSTD" Member="TSTDs">
+    <Type Name="TSTD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TSTFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="UOM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Rates" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ETA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="G250" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CSSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GLID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="SCC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="G199" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G201" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G202" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="G206" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastQty" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="CommPct" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="OComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LComm" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DiscPct" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="ODisc" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LDisc" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="T1G60" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T2G60" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tax1Pct" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="OTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Tax2Pct" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="OTax2" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LTax2" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BatchID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BatchNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSTF" Member="TSTFs">
+    <Type Name="TSTF">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="G2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TrxDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UDNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AcctID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AcctName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Add1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add3" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Add4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Add5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ZIP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LUAID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AccMth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Narration" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EnterBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="UpdateBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="InputDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PrintBy" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PrintNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Handler" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CCID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ER" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Info" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="Info2" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="TS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SS" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="InstNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsDCNote" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RefNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LSTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OSTax1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="STax1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LGross" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OGross" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PymtTerms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="XDocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GSTIncl" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Header" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CustRef" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DONotes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsBadDebt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DelDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ETA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="G250" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G260" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMLID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OldDocNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SrcID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="XOGID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ARXML" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="ARText" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AMLID2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G207" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="G208" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CLDID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSTP" Member="TSTPs">
+    <Type Name="TSTP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TSTFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="G231" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rate" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CCID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ER" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DrAMF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DrGL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CrAMF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CrGL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FromLine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSTS" Member="TSTs">
+    <Type Name="TST">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TSTFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TSTDID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SNo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CSSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Amt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSTT" Member="TSTTs">
+    <Type Name="TSTT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TSTFID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AMFID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qty" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="G209" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UAF" Member="UAFs">
+    <Type Name="UAF">
+      <Column Name="UserID" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccessCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UGA" Member="UGAs">
+    <Type Name="UGA">
+      <Column Name="GID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UID" Type="System.String" DbType="Char(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UMF" Member="UMFs">
+    <Type Name="UMF">
+      <Column Name="UserID" Type="System.String" DbType="Char(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Retries" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dept" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OGID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AcctID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UMF_OGA" Member="OGAs" ThisKey="UserID" OtherKey="UID" Type="OGA" />
+    </Type>
+  </Table>
+</Database>

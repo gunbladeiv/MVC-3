@@ -140,46 +140,64 @@ namespace Proline.Controllers
                              getDescGroup(Convert.ToInt32(c.G233)), getDescGroup(Convert.ToInt32(c.G234)), Convert.ToString(c.Model)
                          };
                        
-            // Prepare for DropDown list both UOM and G230,G233, and G234
-            //var temp = db.SGMs.Where(c => (c.UGC.Length != 0))
-            //            .Select(c => new { c.GID, c.UGC });
-            //var jsonUOMList = temp.Select(c=> new[]{ c.GID.ToString(), c.UGC.ToString()});
-            
-            //var temp2 = db.SGMs.Where(c => (c.Desc.Length != 0))
-            //            .Select(c => new { c.GID, c.Desc });
-            //var jsonGrpList = temp2.Select(c => new[] { c.GID.ToString(), c.Desc.ToString() });
-
-            // End setting up JSON list to work with dynamic select list
-
             return Json(new
             {
                 sEcho = param.sEcho,
                 iTotalRecords = allItems.Count(),
                 iTotalDisplayRecords = filteredItems.Count(),
                 aaData = result
-                //uomselect = jsonUOMList,
-                //grpselect = jsonGrpList
             }, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult uomSelectList(int id)
+        public ActionResult uomSelectList(string id)
         {
-            
-            var temp = db.SGMs.Where(c => (c.UGC.Length != 0) && (c.SID.ToString().Contains(id.ToString())))
-                        .Select(c => new { c.GID, c.UGC });
+            if (id.Equals("209"))
+            {
+                var temp = db.SGMs.Where(c => (c.UGC.Length != 0) && (c.SID.ToString().Contains(id.ToString())))
+                            .Select(c => new { c.GID, c.UGC });
                 var jsonUOMList = temp.Select(c => new[] { c.GID.ToString(), c.UGC.ToString() });
-                return Json(jsonUOMList); 
+                return Json(jsonUOMList);
+            }
+            else
+            {
+                // Get the value and check for SID in SGM table
+                var temp = db.SGMs.Where(c => c.UGC.Equals(id)).Select(c => c.SID.ToString()).ToArray();
+                var rules = new[] {"","209"};
+                string temp_id = returnSID(temp,rules);
+                id = temp_id.ToString();
+
+                var _temp = db.SGMs.Where(c => (c.UGC.Length != 0) && (Convert.ToString(c.GID).Contains(id)))
+                       .Select(c => new { c.GID, c.UGC });
+
+                var jsonGRPList = _temp.Select(c => new[] { c.GID.ToString(), c.UGC.ToString() });
+                return Json(jsonGRPList);
+            }
         }
 
-        public ActionResult grpSelectList(int id)
+        public ActionResult grpSelectList(string id)
         {
-            var temp = db.SGMs.Where(c => (c.Desc.Length != 0) && (Convert.ToString(c.GID).Contains(id.ToString())))
-                       .Select(c => new { c.GID , c.Desc });
-            
-             var jsonGRPList = temp.Select(c => new[] { c.GID.ToString(), c.Desc.ToString() });
-             return Json(jsonGRPList);
-        }
+            if (id.Equals("230") || id.Equals("233") || id.Equals("250"))
+            {
+                var temp = db.SGMs.Where(c => (c.Desc.Length != 0) && (Convert.ToString(c.SID).Equals(id)))
+                       .Select(c => new { c.GID, c.Desc });
 
+                var jsonGRPList = temp.Select(c => new[] { c.GID.ToString(), c.Desc.ToString() });
+                return Json(jsonGRPList);
+            }
+            else {
+                // Get the value and check for SID in SGM table
+                var temp = db.SGMs.Where(c => c.Desc.Equals(id)).Select(c => c.SID.ToString()).ToArray();
+                string temp_id = returnSID(temp,new[] {"230","233","250"}); 
+                id = temp_id.ToString();
+
+                var _temp = db.SGMs.Where(c => (c.Desc.Length != 0) && (Convert.ToString(c.SID).Equals(id)))
+                       .Select(c => new { c.GID, c.Desc });
+
+                var jsonGRPList = _temp.Select(c => new[] { c.GID.ToString(), c.Desc.ToString() });
+                return Json(jsonGRPList);
+            }
+             
+        }
 
         // CRUD FUNCTION
         // DELETE DATA FROM DATA TABLES
@@ -203,11 +221,11 @@ namespace Proline.Controllers
 
         // CRUD FUNCTION 
         // ADD NEW ITEM USING AJAX
-        public int AddData(Nullable<int> id, string Name, Nullable<int> UOM, string Remarks, string BarCode,
-            Nullable<byte> WithSerial, Nullable<int> Reorder, string Code, Nullable<int> G230, Nullable<int> G233, Nullable<int> G234, 
+        public int AddData(string Name, Nullable<int> UOM, string Remarks, string BarCode,
+            Nullable<bool> WithSerial, Nullable<int> Reorder, string Code, Nullable<int> G230, Nullable<int> G233, Nullable<int> G234, 
             string Model)
         {
-            var allItem = db.PDs;
+            var allItem = from m in db.PDs select m;
             if (allItem.Any(c => c.Name.ToLower().Equals(Name.ToLower())))
             {
                 Response.Write("Item with the name '" + Name + "' already exists");
@@ -215,13 +233,8 @@ namespace Proline.Controllers
                 Response.End();
                 return -1;
             }
-            if (WithSerial.Equals(null))
-            {
-                WithSerial = 0;
-            }
-
+            
             var pushPDS = new PD();
-            pushPDS.ID = -1;
             pushPDS.Name = Name;
             pushPDS.UOM = UOM;
             pushPDS.Remarks = Remarks;
@@ -237,11 +250,13 @@ namespace Proline.Controllers
             db.PDs.InsertOnSubmit(pushPDS);
             db.SubmitChanges();
 
-            return 1;
+            //Response.End();
+            return pushPDS.ID;
         }
         
         //
         // Update data inline engine
+        
         public string UpdateData(int id, string value,int columnPosition)
         {
             var allItems = db.PDs;
@@ -268,7 +283,7 @@ namespace Proline.Controllers
                     itemToPush.BarCode = value;
                     break;
                 case 4:
-                    itemToPush.WithSerial = Convert.ToByte(value);
+                    itemToPush.WithSerial = Convert.ToBoolean(value);
                     break;
                 case 5:
                     itemToPush.Reorder = Convert.ToInt32(value);
@@ -328,27 +343,20 @@ namespace Proline.Controllers
                 return "Not Set";
         }
 
+        private string returnSID(string[] id, string[] rules)
+        {
+            string sid="";
+            foreach (var x in id)
+            {
+                foreach (var r in rules)
+                { if (x.Contains(r)) sid = x.ToString(); }
+            }
+            return sid;
+        }
+
         
        
         #endregion
     }
 
-}
-public static class Json
-{
-    public static string ToJson(this IEnumerable<SelectListItem> slis)
-    {
-        string output = "{";
-        if (slis != null)
-        {
-            for (int i = 0; i < slis.Count(); i++)
-            {
-                output += " '" + slis.Skip(i)
-                .First().Value + "': '" +
-                slis.Skip(i).First().Text + "'" +
-                (i == slis.Count() - 1 ? " " : ",");
-            }
-        }
-        return output += "}";
-    }
 }

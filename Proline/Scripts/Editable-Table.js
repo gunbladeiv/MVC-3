@@ -25,22 +25,32 @@ function uomlist(y) {
     return uomlist;
 }
 
-function uomList(y) {
-    ulist = uomlist(y);
-    return ulist;
-}
-
-function grplist(y) {
+function g230list(y) {
     $.post('Items/grpSelectList?id='+y, {},
     function (data) {
-        grplist = validateJSON(data);
+        g230list = validateJSON(data);
     },
     'json/javascript'
     );
-    return grplist;
+    return g230list;
 }
 
-function grpList(y) {
-    b = grplist(y);
-    return b;
+function g233list(y) {
+    $.post('Items/grpSelectList?id=' + y, {},
+    function (data) {
+        g233list = validateJSON(data);
+    },
+    'json/javascript'
+    );
+    return g233list;
+}
+
+function g234list(y) {
+    $.post('Items/grpSelectList?id=' + y, {},
+    function (data) {
+        g234list = validateJSON(data);
+    },
+    'json/javascript'
+    );
+    return g234list;
 }

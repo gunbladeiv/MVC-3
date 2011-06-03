@@ -23073,7 +23073,7 @@ namespace Proline.Models
 		
 		private string _BarCode;
 		
-		private System.Nullable<byte> _WithSerial;
+		private System.Nullable<bool> _WithSerial;
 		
 		private System.Nullable<double> _DiluteX;
 		
@@ -23131,7 +23131,7 @@ namespace Proline.Models
     partial void OnUnitChanged();
     partial void OnBarCodeChanging(string value);
     partial void OnBarCodeChanged();
-    partial void OnWithSerialChanging(System.Nullable<byte> value);
+    partial void OnWithSerialChanging(System.Nullable<bool> value);
     partial void OnWithSerialChanged();
     partial void OnDiluteXChanging(System.Nullable<double> value);
     partial void OnDiluteXChanged();
@@ -23319,7 +23319,7 @@ namespace Proline.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WithSerial", DbType="Bit")]
-		public System.Nullable<byte> WithSerial
+		public System.Nullable<bool> WithSerial
 		{
 			get
 			{

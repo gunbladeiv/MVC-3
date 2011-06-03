@@ -1,5 +1,4 @@
-﻿var oTable;
-$(document).ready(function () {
+﻿$(document).ready(function () {
     var oTable = $('#myItem').dataTable({
         "bProcessing": true,
         "bServerSide": true,
@@ -30,35 +29,36 @@ $(document).ready(function () {
         aoColumns: [
                     {},
                     {
-                        data: uomList(209),
-                        type: "select", 
-                        onBlur: "submit",
-                        submit : "OK"
-                    },  
-                    {},
-                    {},
-                    {},
-                    {},
-                    {},
-                    {
-                        data: grpList(230),
+                        data: uomlist("209"),
                         type: "select",
-                        onBlur: "submit",
-                        submit : "OK"
+                        submit: "OK"
                     },
+                    {},
+                    {},
                     {
-                        data: grpList(233),
                         type: "select",
                         onBlur: "submit",
+                        data: "{ null:'Please Select',False:'Not Included',True:'Included'}",
+                        submit: "OK"
+                    },
+                    {},
+                    {},
+                    {
+                        data: g230list("230"),
+                        type: "select",
                         submit: "OK"
                     },
                     {
-                        data: grpList(234),
+                        data: g233list("233"),
                         type: "select",
-                        onBlur: "submit",
+                        submit: "OK"
+                    },
+                    {
+                        data: g234list("250"),
+                        type: "select",
                         submit: "OK"
                     },
                     {}
                    ]
-                });
-        });
+    });
+});

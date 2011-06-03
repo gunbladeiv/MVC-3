@@ -1,0 +1,786 @@
+USE [ProLine]
+GO
+
+CREATE CLUSTERED INDEX [_dta_index_AOF_c_7_1067150847__K3_K6_K5_K7] ON [dbo].[AOF] 
+(
+	[AccID] ASC,
+	[InstNo] ASC,
+	[DocNo] ASC,
+	[TrxSeq] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AOF_7_1067150847__K3_K5_K6_7_33] ON [dbo].[AOF] 
+(
+	[AccID] ASC,
+	[DocNo] ASC,
+	[InstNo] ASC
+)
+INCLUDE ( [TrxSeq],
+[LXAmt]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_1067150847_3_6] ON [dbo].[AOF]([AccID], [InstNo])
+go
+
+CREATE STATISTICS [_dta_stat_1067150847_5_6_3] ON [dbo].[AOF]([DocNo], [InstNo], [AccID])
+go
+
+CREATE STATISTICS [_dta_stat_1067150847_5_3_6_7] ON [dbo].[AOF]([DocNo], [AccID], [InstNo], [TrxSeq])
+go
+
+CREATE CLUSTERED INDEX [_dta_index_SGM_c_7_1669580986__K2] ON [dbo].[SGM] 
+(
+	[SID] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_SGM_7_1669580986__K1_2_3_4_5_6_7_8] ON [dbo].[SGM] 
+(
+	[GID] ASC
+)
+INCLUDE ( [SID],
+[UGC],
+[Desc],
+[Abbrev],
+[Val],
+[SCC],
+[Seq]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_SGM_7_1669580986__K1_4] ON [dbo].[SGM] 
+(
+	[GID] ASC
+)
+INCLUDE ( [Desc]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_1669580986_4_1] ON [dbo].[SGM]([Desc], [GID])
+go
+
+CREATE STATISTICS [_dta_stat_1669580986_2_5] ON [dbo].[SGM]([SID], [Abbrev])
+go
+
+CREATE STATISTICS [_dta_stat_1669580986_1_6] ON [dbo].[SGM]([GID], [Val])
+go
+
+CREATE STATISTICS [_dta_stat_1669580986_2_1] ON [dbo].[SGM]([SID], [GID])
+go
+
+CREATE STATISTICS [_dta_stat_1669580986_2_3] ON [dbo].[SGM]([SID], [UGC])
+go
+
+CREATE STATISTICS [_dta_stat_1669580986_8_2] ON [dbo].[SGM]([Seq], [SID])
+go
+
+CREATE STATISTICS [_dta_stat_1669580986_1_2_8] ON [dbo].[SGM]([GID], [SID], [Seq])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AMF_7_779149821__K21_K1_K31_K2_K33_K57_3_4_7_8_9_12_53] ON [dbo].[AMF] 
+(
+	[G30] ASC,
+	[ID] ASC,
+	[Handler] ASC,
+	[AccNo] ASC,
+	[SubBroker] ASC,
+	[AMLID] ASC
+)
+INCLUDE ( [Status],
+[Name],
+[OPhone],
+[HPhone],
+[Mobile],
+[Contact],
+[Salutation]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AMF_7_779149821__K3_K21_K4_1_36] ON [dbo].[AMF] 
+(
+	[Status] ASC,
+	[G30] ASC,
+	[Name] ASC
+)
+INCLUDE ( [ID],
+[OGID]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AMF_7_779149821__K2_4] ON [dbo].[AMF] 
+(
+	[AccNo] ASC
+)
+INCLUDE ( [Name]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AMF_7_779149821__K1D_4] ON [dbo].[AMF] 
+(
+	[ID] DESC
+)
+INCLUDE ( [Name]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_779149821_42] ON [dbo].[AMF]([GreetDpv])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_57_2] ON [dbo].[AMF]([AMLID], [AccNo])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_4_3] ON [dbo].[AMF]([Name], [Status])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_4_1] ON [dbo].[AMF]([Name], [ID])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_21_3_4] ON [dbo].[AMF]([G30], [Status], [Name])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_1_31_2_33] ON [dbo].[AMF]([ID], [Handler], [AccNo], [SubBroker])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_57_1_31_2] ON [dbo].[AMF]([AMLID], [ID], [Handler], [AccNo])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_33_57_2_1] ON [dbo].[AMF]([SubBroker], [AMLID], [AccNo], [ID])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_31_57_2_33_1] ON [dbo].[AMF]([Handler], [AMLID], [AccNo], [SubBroker], [ID])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K3_K2_K39_K1_K40_K30_4_6_22_35_38_43_50_54] ON [dbo].[TSTF] 
+(
+	[TrxDT] ASC,
+	[G2] ASC,
+	[SS] ASC,
+	[ID] ASC,
+	[InstNo] ASC,
+	[Handler] ASC
+)
+INCLUDE ( [UDNo],
+[AcctName],
+[Narration],
+[LAmt],
+[TS],
+[RefNo],
+[DONo],
+[CustRef]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K3_K2_K39_K1_K40_K5_4_6_22_35_38_43_50_54] ON [dbo].[TSTF] 
+(
+	[TrxDT] ASC,
+	[G2] ASC,
+	[SS] ASC,
+	[ID] ASC,
+	[InstNo] ASC,
+	[AcctID] ASC
+)
+INCLUDE ( [UDNo],
+[AcctName],
+[Narration],
+[LAmt],
+[TS],
+[RefNo],
+[DONo],
+[CustRef]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K62_1_4_50] ON [dbo].[TSTF] 
+(
+	[OldDocNo] ASC
+)
+INCLUDE ( [ID],
+[UDNo],
+[DONo]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K5_K54] ON [dbo].[TSTF] 
+(
+	[AcctID] ASC,
+	[CustRef] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K2] ON [dbo].[TSTF] 
+(
+	[G2] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K63] ON [dbo].[TSTF] 
+(
+	[CMFID] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_770101784_2_22] ON [dbo].[TSTF]([G2], [Narration])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_63_3] ON [dbo].[TSTF]([CMFID], [TrxDT])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_2_63] ON [dbo].[TSTF]([G2], [CMFID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_54_5] ON [dbo].[TSTF]([CustRef], [AcctID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_5] ON [dbo].[TSTF]([ID], [AcctID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_2] ON [dbo].[TSTF]([ID], [G2])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_2_62] ON [dbo].[TSTF]([G2], [OldDocNo])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_5_63] ON [dbo].[TSTF]([AcctID], [CMFID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_39_1_5] ON [dbo].[TSTF]([SS], [ID], [AcctID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_63_39_1] ON [dbo].[TSTF]([CMFID], [SS], [ID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_5_3_2] ON [dbo].[TSTF]([AcctID], [TrxDT], [G2])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_2_1_40] ON [dbo].[TSTF]([G2], [ID], [InstNo])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_39_2_38] ON [dbo].[TSTF]([SS], [G2], [TS])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_2_39_1] ON [dbo].[TSTF]([G2], [SS], [ID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_39_1_40_3] ON [dbo].[TSTF]([SS], [ID], [InstNo], [TrxDT])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_63_39_5_1] ON [dbo].[TSTF]([CMFID], [SS], [AcctID], [ID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_3_2] ON [dbo].[TSTF]([ID], [InstNo], [TrxDT], [G2])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_39_1_40_2] ON [dbo].[TSTF]([SS], [ID], [InstNo], [G2])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_5_2_39_1] ON [dbo].[TSTF]([AcctID], [G2], [SS], [ID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_5_2_39] ON [dbo].[TSTF]([ID], [InstNo], [AcctID], [G2], [SS])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_5_3_39] ON [dbo].[TSTF]([ID], [InstNo], [AcctID], [TrxDT], [SS])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_3_39_2_1_40] ON [dbo].[TSTF]([TrxDT], [SS], [G2], [ID], [InstNo])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_5_2_63] ON [dbo].[TSTF]([ID], [InstNo], [AcctID], [G2], [CMFID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_63_39_5] ON [dbo].[TSTF]([ID], [InstNo], [CMFID], [SS], [AcctID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_30_3_39_2] ON [dbo].[TSTF]([ID], [InstNo], [Handler], [TrxDT], [SS], [G2])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_3_2_39_5_1_40] ON [dbo].[TSTF]([TrxDT], [G2], [SS], [AcctID], [ID], [InstNo])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_63_39_2_1_40_5] ON [dbo].[TSTF]([CMFID], [SS], [G2], [ID], [InstNo], [AcctID])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AML_7_683149479__K1_K11] ON [dbo].[AML] 
+(
+	[ID] ASC,
+	[G216] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_683149479_3] ON [dbo].[AML]([Status])
+go
+
+CREATE STATISTICS [_dta_stat_683149479_11_1] ON [dbo].[AML]([G216], [ID])
+go
+
+CREATE STATISTICS [_dta_stat_875150163_1_3] ON [dbo].[MRL]([RelID], [CID])
+go
+
+CREATE STATISTICS [_dta_stat_2105058535_1_2] ON [dbo].[TSTD]([ID], [TSTFID])
+go
+
+CREATE STATISTICS [_dta_stat_1445580188_1_25_5] ON [dbo].[PDS]([ID], [G230], [Name])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AOF_7_1067150847__K3_5_6_7_33] ON [dbo].[AOF] 
+(
+	[AccID] ASC
+)
+INCLUDE ( [DocNo],
+[InstNo],
+[TrxSeq],
+[LXAmt]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_1067150847_5_6] ON [dbo].[AOF]([DocNo], [InstNo])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_SGM_7_1669580986__K2_K1_K8_3_4_5_6_7] ON [dbo].[SGM] 
+(
+	[SID] ASC,
+	[GID] ASC,
+	[Seq] ASC
+)
+INCLUDE ( [UGC],
+[Desc],
+[Abbrev],
+[Val],
+[SCC]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_SGM_7_1669580986__K1_K2_K8_3_4_5_6_7] ON [dbo].[SGM] 
+(
+	[GID] ASC,
+	[SID] ASC,
+	[Seq] ASC
+)
+INCLUDE ( [UGC],
+[Desc],
+[Abbrev],
+[Val],
+[SCC]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_SGM_7_1669580986__K1_K2_4] ON [dbo].[SGM] 
+(
+	[GID] ASC,
+	[SID] ASC
+)
+INCLUDE ( [Desc]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_SGM_7_1669580986__K2_K5_1] ON [dbo].[SGM] 
+(
+	[SID] ASC,
+	[Abbrev] ASC
+)
+INCLUDE ( [GID]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE CLUSTERED INDEX [_dta_index_SYSU_c_7_443148624__K1_K2] ON [dbo].[SYSU] 
+(
+	[ID] ASC,
+	[UID] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AMF_7_779149821__K21_K33_K2_K1_K31_K57_3_4_7_8_9_12_53] ON [dbo].[AMF] 
+(
+	[G30] ASC,
+	[SubBroker] ASC,
+	[AccNo] ASC,
+	[ID] ASC,
+	[Handler] ASC,
+	[AMLID] ASC
+)
+INCLUDE ( [Status],
+[Name],
+[OPhone],
+[HPhone],
+[Mobile],
+[Contact],
+[Salutation]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AMF_7_779149821__K21_K3_K4_1] ON [dbo].[AMF] 
+(
+	[G30] ASC,
+	[Status] ASC,
+	[Name] ASC
+)
+INCLUDE ( [ID]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AMF_7_779149821__K1] ON [dbo].[AMF] 
+(
+	[ID] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_779149821_57_33] ON [dbo].[AMF]([AMLID], [SubBroker])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_1_31_33_2] ON [dbo].[AMF]([ID], [Handler], [SubBroker], [AccNo])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_31_57_2_33] ON [dbo].[AMF]([Handler], [AMLID], [AccNo], [SubBroker])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_33_2_1_31_21] ON [dbo].[AMF]([SubBroker], [AccNo], [ID], [Handler], [G30])
+go
+
+CREATE STATISTICS [_dta_stat_779149821_57_2_33_1_31_21] ON [dbo].[AMF]([AMLID], [AccNo], [SubBroker], [ID], [Handler], [G30])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTD_7_2105058535__K2_1_3_4_5_6_7_8_9_10_11_12_14_15_16_17_18_19_20_21_22_23_24] ON [dbo].[TSTD] 
+(
+	[TSTFID] ASC
+)
+INCLUDE ( [ID],
+[Desc],
+[OAmt],
+[LAmt],
+[OPrice],
+[LPrice],
+[Qty],
+[UOM],
+[StockID],
+[RefNo],
+[Rates],
+[ETA],
+[G250],
+[GLID],
+[SCC],
+[Tag],
+[G199],
+[G201],
+[G202],
+[StartDT],
+[EndDT],
+[Duration]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K5_K2_K39_K1_3_4_6_22_35_38_40_43_50_54] ON [dbo].[TSTF] 
+(
+	[AcctID] ASC,
+	[G2] ASC,
+	[SS] ASC,
+	[ID] ASC
+)
+INCLUDE ( [TrxDT],
+[UDNo],
+[AcctName],
+[Narration],
+[LAmt],
+[TS],
+[InstNo],
+[RefNo],
+[DONo],
+[CustRef]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K62_1_3_4_50_63] ON [dbo].[TSTF] 
+(
+	[OldDocNo] ASC
+)
+INCLUDE ( [ID],
+[TrxDT],
+[UDNo],
+[DONo],
+[CMFID]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_TSTF_7_770101784__K54] ON [dbo].[TSTF] 
+(
+	[CustRef] ASC
+)WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_770101784_56_63] ON [dbo].[TSTF]([IsBadDebt], [CMFID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_3] ON [dbo].[TSTF]([ID], [InstNo], [TrxDT])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_63] ON [dbo].[TSTF]([ID], [InstNo], [CMFID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_3_39_2] ON [dbo].[TSTF]([TrxDT], [SS], [G2])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_2_1_40_3] ON [dbo].[TSTF]([G2], [ID], [InstNo], [TrxDT])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_39_1_40_5] ON [dbo].[TSTF]([SS], [ID], [InstNo], [AcctID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_63_39_1_40_5] ON [dbo].[TSTF]([CMFID], [SS], [ID], [InstNo], [AcctID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_3_2_39_5_1] ON [dbo].[TSTF]([TrxDT], [G2], [SS], [AcctID], [ID])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_2_63_39_1_40] ON [dbo].[TSTF]([G2], [CMFID], [SS], [ID], [InstNo])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_2_1_40_5_3] ON [dbo].[TSTF]([G2], [ID], [InstNo], [AcctID], [TrxDT])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_40_5_2_63_39] ON [dbo].[TSTF]([ID], [InstNo], [AcctID], [G2], [CMFID], [SS])
+go
+
+CREATE STATISTICS [_dta_stat_770101784_1_3_2_39_40_5] ON [dbo].[TSTF]([ID], [TrxDT], [G2], [SS], [InstNo], [AcctID])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_AML_7_683149479__K2_1_5] ON [dbo].[AML] 
+(
+	[ACCID] ASC
+)
+INCLUDE ( [ID],
+[Add1]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_INF_7_1237579447__K3_K2_K23_K1_K10_K13_K8_4_6_7_9_11_20] ON [dbo].[INF] 
+(
+	[XDocID] ASC,
+	[srcTable] ASC,
+	[SS] ASC,
+	[ID] ASC,
+	[G226] ASC,
+	[G310] ASC,
+	[UpdateDT] ASC
+)
+INCLUDE ( [XDocRef],
+[DueDT],
+[CreateDT],
+[UpdateUID],
+[Subject],
+[Contact]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_1237579447_8_3_2_23] ON [dbo].[INF]([UpdateDT], [XDocID], [srcTable], [SS])
+go
+
+CREATE STATISTICS [_dta_stat_1237579447_1_10_13_3_2_23_8] ON [dbo].[INF]([ID], [G226], [G310], [XDocID], [srcTable], [SS], [UpdateDT])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_PDS_7_1445580188__K1_K25_K5_20] ON [dbo].[PDS] 
+(
+	[ID] ASC,
+	[G230] ASC,
+	[Name] ASC
+)
+INCLUDE ( [Reorder]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_PDS_7_1445580188__K5_1] ON [dbo].[PDS] 
+(
+	[Name] ASC
+)
+INCLUDE ( [ID]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_CMF_7_306100131__K30D_K34_1_3_9_10_11_12_13_14_17_37] ON [dbo].[CMF] 
+(
+	[EffDT] DESC,
+	[DocDT] ASC
+)
+INCLUDE ( [ID],
+[UDNo],
+[CustName],
+[G200],
+[G203],
+[Add1],
+[Add2],
+[Add3],
+[ZIP],
+[Contact]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_CMF_7_306100131__K1_K10_K11_K30_3_9_12_13_14_17_34_37] ON [dbo].[CMF] 
+(
+	[ID] ASC,
+	[G200] ASC,
+	[G203] ASC,
+	[EffDT] ASC
+)
+INCLUDE ( [UDNo],
+[CustName],
+[Add1],
+[Add2],
+[Add3],
+[ZIP],
+[DocDT],
+[Contact]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_CMF_7_306100131__K1_K34_3_9_48] ON [dbo].[CMF] 
+(
+	[ID] ASC,
+	[DocDT] ASC
+)
+INCLUDE ( [UDNo],
+[CustName],
+[OldUDNo]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_306100131_22_7] ON [dbo].[CMF]([SS], [OldDocNo])
+go
+
+CREATE STATISTICS [_dta_stat_306100131_34_10_11] ON [dbo].[CMF]([DocDT], [G200], [G203])
+go
+
+CREATE STATISTICS [_dta_stat_306100131_1_34_10] ON [dbo].[CMF]([ID], [DocDT], [G200])
+go
+
+CREATE STATISTICS [_dta_stat_306100131_10_11_1_34_30] ON [dbo].[CMF]([G200], [G203], [ID], [DocDT], [EffDT])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_CLD_7_642101328__K2_K1_4_5_6_11_20_64_85_86_89] ON [dbo].[CLD] 
+(
+	[CMFID] ASC,
+	[ID] ASC
+)
+INCLUDE ( [Add1],
+[Add2],
+[Add3],
+[G203],
+[Contact],
+[ZIP],
+[PaymentMode],
+[Title],
+[EffDT]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_CLD_7_642101328__K1_K2_K85_K11_4_5_6_17_20_64_86_89] ON [dbo].[CLD] 
+(
+	[ID] ASC,
+	[CMFID] ASC,
+	[PaymentMode] ASC,
+	[G203] ASC
+)
+INCLUDE ( [Add1],
+[Add2],
+[Add3],
+[Billing],
+[Contact],
+[ZIP],
+[Title],
+[EffDT]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_CLD_7_642101328__K2_19] ON [dbo].[CLD] 
+(
+	[CMFID] ASC
+)
+INCLUDE ( [LAmt]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_CLD_7_642101328__K2_K1_19_86] ON [dbo].[CLD] 
+(
+	[CMFID] ASC,
+	[ID] ASC
+)
+INCLUDE ( [LAmt],
+[Title]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_CLD_7_642101328__K2_K1_17_19_86] ON [dbo].[CLD] 
+(
+	[CMFID] ASC,
+	[ID] ASC
+)
+INCLUDE ( [Billing],
+[LAmt],
+[Title]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_642101328_85_2] ON [dbo].[CLD]([PaymentMode], [CMFID])
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_SGM_7_1474104292__K2_K1_K8_3_4_5_6_7] ON [dbo].[SGM] 
+(
+	[SID] ASC,
+	[GID] ASC,
+	[Seq] ASC
+)
+INCLUDE ( [UGC],
+[Desc],
+[Abbrev],
+[Val],
+[SCC]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE NONCLUSTERED INDEX [_dta_index_SGM_7_1474104292__K2_K8_K4_1_7] ON [dbo].[SGM] 
+(
+	[SID] ASC,
+	[Seq] ASC,
+	[Desc] ASC
+)
+INCLUDE ( [GID],
+[SCC]) WITH (SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF) ON [PRIMARY]
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_3_1] ON [dbo].[SGM]([UGC], [GID])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_2_5] ON [dbo].[SGM]([SID], [Abbrev])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_4_1] ON [dbo].[SGM]([Desc], [GID])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_1_6_4] ON [dbo].[SGM]([GID], [Val], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_3_2_1] ON [dbo].[SGM]([UGC], [SID], [GID])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_1_4_2] ON [dbo].[SGM]([GID], [Desc], [SID])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_8_4_1] ON [dbo].[SGM]([Seq], [Desc], [GID])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_4_2_3] ON [dbo].[SGM]([Desc], [SID], [UGC])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_2_6_8] ON [dbo].[SGM]([SID], [Val], [Seq])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_1_5_4] ON [dbo].[SGM]([GID], [Abbrev], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_5_4_2] ON [dbo].[SGM]([Abbrev], [Desc], [SID])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_8_3_2] ON [dbo].[SGM]([Seq], [UGC], [SID])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_2_1_5_4] ON [dbo].[SGM]([SID], [GID], [Abbrev], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_5_4_6_2] ON [dbo].[SGM]([Abbrev], [Desc], [Val], [SID])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_8_4_2_6] ON [dbo].[SGM]([Seq], [Desc], [SID], [Val])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_6_1_5_4] ON [dbo].[SGM]([Val], [GID], [Abbrev], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_8_2_1_4] ON [dbo].[SGM]([Seq], [SID], [GID], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_1_2_6_3] ON [dbo].[SGM]([GID], [SID], [Val], [UGC])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_1_2_8_3] ON [dbo].[SGM]([GID], [SID], [Seq], [UGC])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_2_1_6_4] ON [dbo].[SGM]([SID], [GID], [Val], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_2_1_3_4] ON [dbo].[SGM]([SID], [GID], [UGC], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_2_1_8_6_4] ON [dbo].[SGM]([SID], [GID], [Seq], [Val], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_1474104292_2_6_1_5_4] ON [dbo].[SGM]([SID], [Val], [GID], [Abbrev], [Desc])
+go
+
+CREATE STATISTICS [_dta_stat_418100530_3_1] ON [dbo].[MRL]([CID], [RelID])
+go

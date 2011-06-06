@@ -1,8 +1,21 @@
-﻿<form id="formAddNewRow" action="#" title="Add New Item">
+﻿@model Proline.Models.Repository
+<form id="formAddNewRow" action="#" title="Add New Item">
 <table>
     <tr><td style="width:40%;"><input type="hidden" id="id" name="id" value="-1" rel="0"/>
     <label for="name">Name</label></td><td><input type="text" name="name" id="Name" class="required"  rel="1"/><br /></td></tr>
-    <tr><td><label for="name">UOM</label></td><td><input type="text" name="UOM" id="UOM"  rel="2"/><br /></td></tr>
+    <tr><td><label for="name">UOM</label></td><td>
+                                    <select name="UOM" id="UOM" rel="2">
+                                        <option value="null" selected="selected">Please Select</option>
+                                        @{
+                                            var uom209 = new Proline.Models.Repository().getUOMList();
+                                                                                        
+                                            foreach (var data in uom209)
+                                            {
+                                                <option value="@data.id">@data.value</option>
+                                            }
+                                        }
+                                    </select>
+                                    <br /></td></tr>
     <tr><td><label for="name">Remarks</label></td><td><input type="text" name="Remarks" id="Remarks"  rel="3" /><br /></td></tr>
     <tr><td><label for="name">BarCode</label></td><td><input type="text" name="BarCode" id="BarCode"  rel="4" /><br /></td></tr>
     <tr><td><label for="name">With Serial</label></td><td><select name="WithSerial" id="WithSerial" rel="5">
@@ -12,9 +25,45 @@
                                                           </select><br /></td></tr>
     <tr><td><label for="name">Reorder</label></td><td><input type="text" name="Reorder" id="Reorder" rel="6"  /><br /></td></tr>
     <tr><td><label for="name">Code</label></td><td><input type="text" name="Code" id="Code" rel="7"  /><br /></td></tr>
-    <tr><td><label for="name">G230</label></td><td><input type="text" name="G230" id="G230" rel="8"  /><br /></td></tr>
-    <tr><td><label for="name">G233</label></td><td><input type="text" name="G233" id="G233" rel="9"  /><br /></td></tr>
-    <tr><td><label for="name">G234</label></td><td><input type="text" name="G234" id="G234" rel="10"  /><br /></td></tr>
+    <tr><td><label for="name">G230</label></td><td>
+                                    <select name="G230" id="G230" rel="8">
+                                        <option value="null" selected="selected">Please Select</option>
+                                        @{
+                                            var g230 = new Proline.Models.Repository().getGRPList(230);
+                                                                                     
+                                            foreach (var data in g230)
+                                            {
+                                                <option value="@data.id">@data.value</option>
+                                            }
+                                        }
+                                    </select>                                
+                                    <br /></td></tr>
+    <tr><td><label for="name">G233</label></td><td>
+                                    <select name="G233" id="G233" rel="9">
+                                        <option value="null" selected="selected">Please Select</option>
+                                        @{
+                                            var g233 = new Proline.Models.Repository().getGRPList(233);
+
+                                            foreach (var data in g233)
+                                            {
+                                                <option value="@data.id">@data.value</option>
+                                            }
+                                        }
+                                    </select>                                
+                                    <br /></td></tr>
+    <tr><td><label for="name">G234</label></td><td>
+                                    <select name="G234" id="G234" rel="10">
+                                        <option value="null" selected="selected">Please Select</option>
+                                        @{
+                                            var g234 = new Proline.Models.Repository().getGRPList(250);
+
+                                            foreach (var data in g234)
+                                            {
+                                                <option value="@data.id">@data.value</option>
+                                            }
+                                        }
+                                    </select>                                
+                                    <br /></td></tr>
     <tr><td><label for="name">Model</label></td><td><input type="text" name="Model" id="Model"  rel="11" /><br /></td></tr>
 </table>
 </form>

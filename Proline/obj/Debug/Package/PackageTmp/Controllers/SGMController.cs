@@ -16,6 +16,7 @@ namespace Proline.Controllers
         // GET: /SGM/
         public ActionResult Index(int id)
         {
+            ViewBag.Title = "SGM Master Settings";
             ViewBag.DisplayGID = id;
             return View();
         }
@@ -23,8 +24,8 @@ namespace Proline.Controllers
         public ActionResult AjaxDataProvider(int id, JQueryDataTableParamModel param)
         {
             var allSGMs = from a in db.SGMs
-                          .Where(c=>c.SID.ToString().Equals(id))
-                           select a;
+                          .Where(c => c.SID.ToString().Equals(id))
+                          select a;
             IEnumerable<SGM> filteredSGMs;
             if (!string.IsNullOrEmpty(param.sSearch))
             {
@@ -43,7 +44,7 @@ namespace Proline.Controllers
                 var isValueSearchable = Convert.ToBoolean(Request["bSearchable_5"]);
                 var isSccSearchable = Convert.ToBoolean(Request["bSearchable_6"]);
                 var isSeqSearchable = Convert.ToBoolean(Request["bSearchable_7"]);
-                
+
                 filteredSGMs = from c in allSGMs
                                           .Where(c => isUgcSearchable && c.UGC.ToLower().Contains(param.sSearch.ToLower())
                                                        ||
@@ -56,7 +57,7 @@ namespace Proline.Controllers
                                                        isSccSearchable && c.SCC.ToString().ToLower().Contains(param.sSearch.ToLower())
                                                        ||
                                                        isSeqSearchable && c.Seq.ToString().ToLower().Contains(param.sSearch.ToLower()))
-                                select c;
+                               select c;
             }
             else
             {
@@ -69,10 +70,10 @@ namespace Proline.Controllers
             var isValSortable = Convert.ToBoolean(Request["bSortable_5"]);//int
             var isSccSortable = Convert.ToBoolean(Request["bSortable_6"]);//String
             var isSeqSortable = Convert.ToBoolean(Request["bSortable_7"]);//int
-            
+
             var sortColumnIndex = Convert.ToInt32(Request["iSortCol_0"]);
 
-            if (sortColumnIndex == 2 || sortColumnIndex == 3 || sortColumnIndex == 4 || sortColumnIndex == 6 )
+            if (sortColumnIndex == 2 || sortColumnIndex == 3 || sortColumnIndex == 4 || sortColumnIndex == 6)
             {
                 Func<SGM, string> orderingFunction = (c =>
                     sortColumnIndex == 2 && isUgcSortable ? c.UGC :
@@ -153,19 +154,19 @@ namespace Proline.Controllers
             switch (columnPosition)
             {
                 case 0:
-                    itemToPush.UGC = value;
+                    itemToPush.UGC = value.ToUpper();
                     break;
                 case 1:
-                    itemToPush.Desc = value;
+                    itemToPush.Desc = value.ToUpper();
                     break;
                 case 2:
-                    itemToPush.Abbrev = value;
+                    itemToPush.Abbrev = value.ToUpper();
                     break;
                 case 3:
                     itemToPush.Val = Convert.ToInt32(value);
                     break;
                 case 4:
-                    itemToPush.SCC = value;
+                    itemToPush.SCC = value.ToUpper();
                     break;
                 case 5:
                     itemToPush.Seq = Convert.ToInt32(value);
@@ -179,7 +180,7 @@ namespace Proline.Controllers
 
         //
         //CRUD OPERATION TO ADD NEW DATA TO SGM
-        public int AddData(int SID, string UGC, string Desc, string Abbrev, 
+        public int AddData(int SID, string UGC, string Desc, string Abbrev,
             Nullable<int> Val, string SCC, Nullable<int> Seq)
         {
             var allItem = from m in db.SGMs select m;
@@ -210,13 +211,13 @@ namespace Proline.Controllers
             var pushSGM = new SGM();
             pushSGM.GID = gid;
             pushSGM.SID = SID;
-            pushSGM.UGC = UGC;
-            pushSGM.Desc = Desc;
-            pushSGM.Abbrev = Abbrev;
+            pushSGM.UGC = UGC.ToUpper();
+            pushSGM.Desc = Desc.ToUpper();
+            pushSGM.Abbrev = Abbrev.ToUpper();
             pushSGM.Val = Val;
-            pushSGM.SCC = SCC;
+            pushSGM.SCC = SCC.ToUpper();
             pushSGM.Seq = Seq;
-            
+
             db.SGMs.InsertOnSubmit(pushSGM);
             db.SubmitChanges();
 

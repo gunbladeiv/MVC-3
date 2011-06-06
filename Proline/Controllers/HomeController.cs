@@ -10,8 +10,8 @@ namespace Proline.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
-
+            ViewBag.Title = "Datum Clearmind Sdn. Bhd.";
+            ViewBag.Message = "Welcome Datum Clearmind Sdn Bhd web application.";
             return View();
         }
 

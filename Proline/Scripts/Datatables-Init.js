@@ -21,44 +21,21 @@
                                 { "sName": "G233", "sWidth": "8%" },
                                 { "sName": "G234", "sWidth": "8%" },
                                 { "sName": "MODEL" }
-		                    ]
-    }).makeEditable({
-        sUpdateURL: "/Items/UpdateData",
-        sAddURL: "/Items/AddData",
-        sDeleteURL: "/Items/DeleteData",
-        aoColumns: [
-                    {},
-                    {
-                        data: uomlist("209"),
-                        type: "select",
-                        submit: "OK"
-                    },
-                    {},
-                    {},
-                    {
-                        type: "select",
-                        onBlur: "submit",
-                        data: "{ null:'Please Select',False:'Not Included',True:'Included'}",
-                        submit: "OK"
-                    },
-                    {},
-                    {},
-                    {
-                        data: g230list("230"),
-                        type: "select",
-                        submit: "OK"
-                    },
-                    {
-                        data: g233list("233"),
-                        type: "select",
-                        submit: "OK"
-                    },
-                    {
-                        data: g234list("250"),
-                        type: "select",
-                        submit: "OK"
-                    },
-                    {}
-                   ]
-    });
+		                    ],
+        "fnDrawCallback": function (oSettings) {
+            $('#myItem tbody tr').each(function () {
+                var iPos = oTable.fnGetPosition(this);
+                $(this).click(function () {
+                    window.location = "Items/Edit/" + oSettings.aoData[iPos]._aData[0];
+                });
+            });
+        }
+    })
+    //    .makeEditable({
+    //        sUpdateURL: "/Items/UpdateData",
+    //        sAddURL: "/Items/AddData",
+    //        sDeleteURL: "/Items/DeleteData",
+    //        aoColumns: [ null,null,null,null,null,null,null,null,null,null,null]
+    //    });
 });
+

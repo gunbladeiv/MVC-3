@@ -116,6 +116,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pldb.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTO.cs" />
+    <Compile Include="Models\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +244,7 @@
     <Content Include="Views\Items\_addNewItemForm.cshtml" />
     <Content Include="Views\SGM\Index.cshtml" />
     <Content Include="Views\SGM\_addNewSGMForm.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

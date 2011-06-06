@@ -13,7 +13,12 @@
         <script src="@Url.Content("~/Scripts/jquery.dataTables.editable.js")" type="text/javascript"></script>
         <script src="@Url.Content("~/Scripts/json.js")" type="text/javascript"></script>
         <script src="@Url.Content("~/Scripts/Datatables-Init.js")" type="text/javascript"></script>
-        <script src="@Url.Content("~/Scripts/Editable-Table.js")" type="text/javascript"></script>
+        @*<script src="@Url.Content("~/Scripts/Editable-Table.js")" type="text/javascript"></script>*@
+        <script type="text/javascript">
+            $('.myItem.display tbody tr').click(function () {
+                alert('e');
+            });
+        </script>
         <title>@ViewBag.Title</title>
     </head>
     <body>
@@ -57,11 +62,11 @@
     </table>
 </div>
 <br /><br />
-<div>
+@*<div>
 <button id="btnAddNewRow" value="Ok">Add new Item</button> 
 <button id="btnDeleteRow" value="cancel">Delete Item</button>
-</div>
-@Html.Partial("_addNewItemForm")
+</div>*@
+@*@Html.Partial("_addNewItemForm")*@
 </body>
 </html>
 

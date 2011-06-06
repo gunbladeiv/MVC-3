@@ -15,8 +15,17 @@ namespace Proline.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Title = "Item(s) Management";
             return View();
         }   
+
+        // Edit
+        // GET EDIT ID
+        public ActionResult Edit(int id)
+        {
+            var itemToEdit = db.PDs.Single(c => c.ID.Equals(id));
+            return View(itemToEdit);
+        }
 
         #region "Ajax Data Handler"
 
@@ -27,7 +36,8 @@ namespace Proline.Controllers
             IEnumerable<PD> filteredItems;
             if (!string.IsNullOrEmpty(param.sSearch))
             {
-                //Used if particulare columns are filtered 
+                //Used if particulare columns are filtered
+                var IDFilter = Convert.ToString(Request["sSearch_0"]);
                 var nameFilter = Convert.ToString(Request["sSearch_1"]);
                 var uomFilter = Convert.ToString(Request["sSearch_2"]);
                 var remarksFilter = Convert.ToString(Request["sSearch_3"]);
@@ -41,6 +51,7 @@ namespace Proline.Controllers
                 var modelFilter = Convert.ToString(Request["sSearch_11"]);
 
                 //Optionally check whether the columns are searchable at all 
+                var isIDSearchable = Convert.ToBoolean(Request["bSearchable_0"]);
                 var isNameSearchable = Convert.ToBoolean(Request["bSearchable_1"]);
                 var isUOMSearchable = Convert.ToBoolean(Request["bSearchable_2"]);
                 var isRemarksSearchable = Convert.ToBoolean(Request["bSearchable_3"]);
@@ -54,35 +65,37 @@ namespace Proline.Controllers
                 var isModelSearchable = Convert.ToBoolean(Request["bSearchable_11"]);
 
 
-                filteredItems = from c in allItems
-                                          .Where(c => isNameSearchable && c.Name.ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isUOMSearchable && c.UOM.ToString().ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isRemarksSearchable && c.Remarks.ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isBarcodeSearchable && c.BarCode.ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isWithSerialSearchable && c.WithSerial.ToString().ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isReorderSearchable && c.Reorder.ToString().ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isCodeSearchable && c.Code.ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isG230Searchable && c.G230.ToString().ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isG233Searchable && c.G233.ToString().ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isG234Searchable && c.G234.ToString().ToLower().Contains(param.sSearch.ToLower())
-                                                       ||
-                                                       isModelSearchable && c.Model.ToLower().Contains(param.sSearch.ToLower()))
-                                    select c;
+                filteredItems = allItems.Where(c => isIDSearchable && c.ID.ToString().ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isNameSearchable && c.Name.ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isUOMSearchable && c.UOM.ToString().ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isRemarksSearchable && c.Remarks.ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isBarcodeSearchable && c.BarCode.ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isWithSerialSearchable && c.WithSerial.ToString().ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isReorderSearchable && c.Reorder.ToString().ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isCodeSearchable && c.Code.ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isG230Searchable && c.G230.ToString().ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isG233Searchable && c.G233.ToString().ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isG234Searchable && c.G234.ToString().ToLower().Contains(param.sSearch.ToLower())
+                                                    ||
+                                                    isModelSearchable && c.Model.ToLower().Contains(param.sSearch.ToLower()))
+                                    .Select(c => c);
              }
             else
             {
                 filteredItems = allItems;
             }
 
+            var isIDSortable = Convert.ToBoolean(Request["bSortable_0"]); //int
             var isNameSortable = Convert.ToBoolean(Request["bSortable_1"]); //String
             var isUOMSortable = Convert.ToBoolean(Request["bSortable_2"]); //Int
             var isRemarksSortable = Convert.ToBoolean(Request["bSortable_3"]);//String
@@ -115,13 +128,14 @@ namespace Proline.Controllers
             }
             else // 2,5,6,8,9,10
             {
-                Func<PD, decimal> orderingFunction = (c => 
-                    sortColumnIndex == 2 && isNameSortable ? Convert.ToDecimal(c.UOM) :
-                    sortColumnIndex == 5 && isRemarksSortable ? Convert.ToDecimal(c.WithSerial) :
-                    sortColumnIndex == 6 && isBarcodeSortable ? Convert.ToDecimal(c.Reorder) :
-                    sortColumnIndex == 8 && isCodeSortable ? Convert.ToDecimal(c.G230) :
-                    sortColumnIndex == 9 && isModelSortable ? Convert.ToDecimal(c.G233) :
-                    sortColumnIndex == 10 && isModelSortable ? Convert.ToDecimal(c.G234) :
+                Func<PD, int> orderingFunction = (c => 
+                    sortColumnIndex == 0 && isIDSortable ? c.ID :
+                    sortColumnIndex == 2 && isNameSortable ? Convert.ToInt32(c.UOM) :
+                    sortColumnIndex == 5 && isRemarksSortable ? Convert.ToInt32(c.WithSerial) :
+                    sortColumnIndex == 6 && isBarcodeSortable ? Convert.ToInt32(c.Reorder) :
+                    sortColumnIndex == 8 && isCodeSortable ? Convert.ToInt32(c.G230) :
+                    sortColumnIndex == 9 && isModelSortable ? Convert.ToInt32(c.G233) :
+                    sortColumnIndex == 10 && isModelSortable ? Convert.ToInt32(c.G234) :
                     0);
             
                 var sortDirection = Request["sSortDir_0"]; // asc or desc
@@ -357,6 +371,7 @@ namespace Proline.Controllers
         
        
         #endregion
+
     }
 
 }

@@ -37,12 +37,18 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Gestalt">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Gestalt.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Omu.ValueInjecter">
       <HintPath>E:\datumcorp\valueinjecter\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
+    <Reference Include="OptimizerPrime">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\OptimizerPrime.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
@@ -67,11 +73,39 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Utilities.Compression">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.DataTypes">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.DataTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Encryption">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Events">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.FileFormats">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.FileFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.IO">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Random">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.Random.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Reflection">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities.Web">
+      <HintPath>..\packages\OptimizerPrime.1.0\lib\Utilities.Web.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\SGMController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,6 +176,7 @@
     <Content Include="Content\themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Content\themes\smoothness\jquery-ui-1.7.2.custom.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Datatables-SGM.js" />
     <Content Include="Scripts\Datatables-Init.js" />
     <Content Include="Scripts\Editable-Table.js" />
     <Content Include="Scripts\jquery-1.4.4.min.js" />
@@ -205,6 +240,8 @@
     </None>
     <Content Include="Views\Items\Index.cshtml" />
     <Content Include="Views\Items\_addNewItemForm.cshtml" />
+    <Content Include="Views\SGM\Index.cshtml" />
+    <Content Include="Views\SGM\_addNewSGMForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

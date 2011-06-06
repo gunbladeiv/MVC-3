@@ -11,3 +11,14 @@ C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Om
 C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Newtonsoft.Json.dll
 C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Newtonsoft.Json.pdb
 C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Newtonsoft.Json.xml
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Gestalt.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\OptimizerPrime.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.Compression.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.DataTypes.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.Encryption.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.Events.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.FileFormats.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.IO.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.Random.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.Reflection.dll
+C:\Users\GunBladeIV\Documents\Visual Studio 2010\Projects\Proline\Proline\bin\Utilities.Web.dll

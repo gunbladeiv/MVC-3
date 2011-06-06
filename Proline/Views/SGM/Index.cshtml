@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+        <link href="@Url.Content("~/Content/dataTables/demo_table.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/dataTables/demo_table_jui.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" media="all" />
+        <link href="@Url.Content("~/Content/themes/smoothness/jquery-ui-1.7.2.custom.css")"rel="stylesheet" type="text/css" media="all" />
+        <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.dataTables.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.jeditable.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.dataTables.editable.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/json.js")" type="text/javascript"></script>
+        <script type="text/javascript">    $(document).ready(function () {
+                var oTable = $('#mySGMs').dataTable({
+                    "bProcessing": true,
+                    "bServerSide": true,
+                    "sAjaxSource": '../AjaxDataProvider?id=@ViewBag.DisplayGID',
+                    "sPaginationType": "full_numbers",
+                    "aoColumns": [
+                                        { "sName": "GID",
+                                            "bSearchable": false,
+                                            "bSortable": false,
+                                            "bVisible": false
+                                        },
+			                            {   "sName": "SID", 
+                                            "bSearchable":false,
+                                            "bSortable": false,
+                                            "bVisible": false
+                                        },
+			                            { "sName": "UGC"},
+			                            { "sName": "Description"},
+                                        { "sName": "Abbreviation"},
+                                        { "sName": "Value"},
+                                        { "sName": "SCC"},
+                                        { "sName": "Sequence"}
+		                            ]
+                }).makeEditable({
+                    sUpdateURL: "../UpdateData",
+                    sAddURL: "../AddData",
+                    sDeleteURL: "../DeleteData"
+                });
+            });
+        </script>
+<h2>Master Setting SGM</h2>
+<div id="demo">
+<table id="mySGMs" class="display">
+        <thead>
+            <tr>
+                <th>GID</th>
+                <th>SID</th>
+                <th>UGC</th>
+                <th>Description</th>
+                <th>Abbreviation</th>
+                <th>Value</th>
+                <th>SCC</th>
+                <th>Sequence</th>                
+            </tr>
+        </thead>
+        <tbody> 
+        </tbody>
+        <tfoot>
+            <tr>
+               <th>GID</th>
+               <th>SID</th>
+               <th>UGC</th>
+               <th>Description</th>
+               <th>Abbreviation</th>
+               <th>Value</th>
+               <th>SCC</th>
+               <th>Sequence</th>      
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<br /><br />
+<div>
+<button id="btnAddNewRow" value="Ok">Add new</button> 
+<button id="btnDeleteRow" value="cancel">Delete</button>
+</div>
+@Html.Partial("_addNewSGMForm")
+

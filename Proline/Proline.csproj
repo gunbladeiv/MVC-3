@@ -110,6 +110,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\DataRepository.cs" />
+    <Compile Include="Models\DTO.cs" />
     <Compile Include="Models\JQueryDataTableParamModel.cs" />
     <Compile Include="Models\pldb.designer.cs">
       <AutoGen>True</AutoGen>
